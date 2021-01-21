@@ -1,0 +1,5 @@
+package com.cos.springboot.service;
+
+public class PostService {
+
+}

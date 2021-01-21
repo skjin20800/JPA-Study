@@ -1,0 +1,24 @@
+server:
+  port: 8080
+  servlet:    context-path: /
+    encoding:      charset: utf-8
+      enabled: true
+    
+    
+spring:  mvc:    view:      prefix: /WEB-INF/views/ # /src/main/webapp
+      suffix: .jsp
+      
+      
+      #datasource => Connetion conn = DBConn.getConnection(); 이랑 같다
+      #JPA => PrepareseStatement pstmt = conn.prepare(sql); 이랑 같다
+  datasource:  #서버실행시 데이터베이스에 연결된 conntion 객체    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springdb?serverTimezone=Asia/Seoul
+    username: springuser
+    password: bitc5600
+    
+  jpa:    hibernate:      ddl-auto: create # 지금 몰라도 됨 .
+    show-sql: true # 지금 몰라도 됨.
+
+   
+    
+    

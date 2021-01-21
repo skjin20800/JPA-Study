@@ -1,0 +1,5 @@
+package com.cos.springboot.web;
+
+public class PostController {
+
+}

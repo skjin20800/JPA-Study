@@ -1,0 +1,31 @@
+server:
+  port: 8080
+  servlet:    context-path: /
+    encoding:      charset: utf-8
+      enabled: true
+    
+    
+spring:  mvc:    view:      prefix: /WEB-INF/views/ # /src/main/webapp
+      suffix: .jsp
+      
+      
+      #datasource => Connetion conn = DBConn.getConnection(); 이랑 같다
+      #JPA => PrepareseStatement pstmt = conn.prepare(sql); 이랑 같다
+  datasource:  #서버실행시 데이터베이스에 연결된 conntion 객체    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springdb?serverTimezone=Asia/Seoul
+    username: springuser
+    password: bitc5600
+    
+    
+    # JPA(Java Persistence API) =  (DAO 내장) - 기반기술 (hibernate (ORM))
+    # ORM(Object Relation Mapping) =  (원래는 fk로 해야됨 )=> Java Object)
+    # 기능 1: 자바 오브젝트 생성하면 -> 테이블이 생성된다.
+  jpa:    hibernate:      ddl-auto: create # jpa실행시 db에 테이블을 만들어주는것 [첫 실행후 update로 바꾸기 권장]
+      naming:        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl #내가 적은 모델명대로 mysql db에 내용이 저장되는것
+    show-sql: true # jpa실행시 콘솔에 띄워주는것 [배포시에는 삭제권장]]
+    properties:      hibernate:
+        format_sql: true
+
+   
+    
+    
